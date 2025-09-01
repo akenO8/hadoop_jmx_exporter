@@ -14,6 +14,7 @@ from cmd.hdfs_journalnode import JournalNodeMetricCollector
 from cmd.yarn_resourcemanager import ResourceManagerMetricCollector
 from cmd.hive_server import HiveServerMetricCollector
 from cmd.yarn_nodemanager import NodeManagerMetricCollector
+from cmd.trino_worker import TrinoWorkerMetricCollector
 
 logger = get_module_logger(__name__)
 
@@ -35,6 +36,8 @@ def register_prometheus(cluster, args):
         REGISTRY.register(HiveServerMetricCollector(cluster, args.hss))
     if args.tcs is not None and len(args.tcs) > 0:
         REGISTRY.register(TrinoCoordinatorMetricCollector(cluster, args.tcs))
+    if args.tws is not None and len(args.tws) > 0:
+        REGISTRY.register(TrinoWorkerMetricCollector(cluster, args.tws))
 
 
 def main():

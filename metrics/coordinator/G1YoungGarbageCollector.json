@@ -4,11 +4,17 @@
   "LastGcInfo.memoryUsageBeforeGc.Compressed Class Space": "",
   "LastGcInfo.memoryUsageBeforeGc.Metaspace": "",
   "LastGcInfo.memoryUsageBeforeGc.G1 Eden Space": "",
+  "LastGcInfo.memoryUsageBeforeGc.CodeHeap 'profiled nmethods'": "",
+  "LastGcInfo.memoryUsageBeforeGc.CodeHeap 'non-profiled nmethods'": "",
+  "LastGcInfo.memoryUsageBeforeGc.CodeHeap 'non-nmethods'": "",
   "LastGcInfo.memoryUsageAfterGc.G1 Old Gen": "",
   "LastGcInfo.memoryUsageAfterGc.G1 Survivor Space": "",
   "LastGcInfo.memoryUsageAfterGc.Compressed Class Space": "",
   "LastGcInfo.memoryUsageAfterGc.Metaspace": "",
   "LastGcInfo.memoryUsageAfterGc.G1 Eden Space": "",
+  "LastGcInfo.memoryUsageAfterGc.CodeHeap 'profiled nmethods'": "",
+  "LastGcInfo.memoryUsageAfterGc.CodeHeap 'non-profiled nmethods'": "",
+  "LastGcInfo.memoryUsageAfterGc.CodeHeap 'non-nmethods'": "",
   "CollectionCount": "YGC",
   "CollectionTime": "YGCT"
 }
