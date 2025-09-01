@@ -66,10 +66,12 @@ class TrinoCoordinatorMetricCollector(MetricCollector):
                 self.setup_trino_coor_labels('GcMonitor')
             if 'java.lang:name=G1 Young Generation,type=GarbageCollector' in beans[i]['objectName']:
                 # self.setup_trino_coor_labels('G1YoungGarbageCollector')
-                self.setup_young_gc_labels();
+                self.setup_young_gc_labels()
             if 'java.lang:name=G1 Old Generation,type=GarbageCollector' in beans[i]['objectName']:
                 # self.setup_trino_coor_labels('G1OldGarbageCollector')
-                self.setup_old_gc_labels();
+                self.setup_old_gc_labels()
+            if 'io.trino.plugin.jdbc:type=CachingJdbcClient,name=ck' in beans[i]['objectName']:
+                self.setup_trino_coor_labels('CkCache')
 
     def setup_trino_coor_labels(self, kind):
         label = ["cluster", "method", "_target"]
@@ -143,10 +145,12 @@ class TrinoCoordinatorMetricCollector(MetricCollector):
                 self.get_trino_coor_labels(beans[i], 'GcMonitor')
             if 'java.lang:name=G1 Young Generation,type=GarbageCollector' in beans[i]['objectName']:
                 # self.get_trino_coor_labels(beans[i], 'G1YoungGarbageCollector')
-                self.get_young_gc_labels(beans[i]);
+                self.get_young_gc_labels(beans[i])
             if 'java.lang:name=G1 Old Generation,type=GarbageCollector' in beans[i]['objectName']:
                 # self.get_trino_coor_labels(beans[i], 'G1OldGarbageCollector')
-                self.get_old_gc_labels(beans[i]);
+                self.get_old_gc_labels(beans[i])
+            if 'io.trino.plugin.jdbc:type=CachingJdbcClient,name=ck' in beans[i]['objectName']:
+                self.get_trino_coor_labels(beans[i], 'CkCache')
 
     def get_trino_coor_labels(self, bean, kind):
         # type(bean) = dict
